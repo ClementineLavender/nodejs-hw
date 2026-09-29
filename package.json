@@ -1,0 +1,38 @@
+{
+  "name": "nodejs-hw",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/ClementineLavender/nodejs-hw#readme",
+  "bugs": {
+    "url": "https://github.com/ClementineLavender/nodejs-hw/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ClementineLavender/nodejs-hw.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index",
+    "format": "prettier --write src/**/*.js",
+    "lint": "eslint src/**/*.js"
+  },
+  "keywords": [],
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mongoose": "^9.10.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.11.0",
+    "globals": "^17.12.0",
+    "nodemon": "^3.1.14",
+    "prettier": "^3.9.9",
+    "typescript": "^7.0.2"
+  }
+}
