@@ -13,6 +13,11 @@ const noteSchema = new Schema(
       default: '',
       trim: true,
     },
+    userId: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+      required: true,
+    },
     tag: {
       type: String,
       enum: TAGS,
