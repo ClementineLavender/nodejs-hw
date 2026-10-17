@@ -25,7 +25,7 @@ export const startServer = async () => {
   app.use(cookieParser());
 
   app.use(notesRouter);
-  app.use('/auth', authRouter);
+  app.use(authRouter);
 
   app.use(errors());
   app.use(notFoundHandler);
