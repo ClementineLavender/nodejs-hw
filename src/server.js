@@ -7,6 +7,7 @@ import { notFoundHandler } from './middleware/notFoundHandler.js';
 import { errorHandler } from './middleware/errorHandler.js';
 import notesRouter from './routes/notesRoutes.js';
 import authRouter from './routes/authRoutes.js';
+import userRouter from './routes/userRoutes.js';
 import { errors } from 'celebrate';
 import cookieParser from 'cookie-parser';
 
@@ -26,6 +27,7 @@ export const startServer = async () => {
 
   app.use(notesRouter);
   app.use(authRouter);
+  app.use(userRouter);
 
   app.use(errors());
   app.use(notFoundHandler);
