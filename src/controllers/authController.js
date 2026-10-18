@@ -147,12 +147,18 @@ export const requestResetEmail = async (req, res, next) => {
     });
 
     try {
-      await sendEmail({
+      const info = await sendEmail({
         to: user.email,
         subject: 'Reset your password',
         html,
       });
-    } catch {
+
+      console.log('Brevo accepted:', info.accepted);
+      console.log('Brevo rejected:', info.rejected);
+      console.log('Brevo message ID:', info.messageId);
+    } catch (error) {
+      console.error('EMAIL ERROR:', error.message);
+
       throw createHttpError(
         500,
         'Failed to send the email, please try again later.',
@@ -166,7 +172,6 @@ export const requestResetEmail = async (req, res, next) => {
     next(error);
   }
 };
-
 
 export const resetPassword = async (req, res, next) => {
   try {

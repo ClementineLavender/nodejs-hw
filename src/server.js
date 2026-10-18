@@ -29,8 +29,8 @@ export const startServer = async () => {
   app.use(authRouter);
   app.use(userRouter);
 
-  app.use(errors());
   app.use(notFoundHandler);
+  app.use(errors());
   app.use(errorHandler);
 
   app.listen(PORT, () => {
