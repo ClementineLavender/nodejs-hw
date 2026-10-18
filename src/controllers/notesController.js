@@ -31,7 +31,7 @@ export const getAllNotes = async (req, res, next) => {
     }
 
     const [notes, totalNotes] = await Promise.all([
-      Note.find(filter).skip(skip).limit(limit),
+      Note.find(filter).sort({ _id: 1 }).skip(skip).limit(limit),
       Note.countDocuments(filter),
     ]);
 
